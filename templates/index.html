@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Stroke Prediction App</title>
+</head>
+<body class="home">
+    <div class="background"></div>
+    <div class="container">
+        <h1>Stroke Prediction Form</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="hypertension">Hypertension (0 or 1):</label>
+                <input type="number" id="hypertension" name="hypertension" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease (0 or 1):</label>
+                <input type="number" id="heart_disease" name="heart_disease" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="avg_glucose_level">Average Glucose Level:</label>
+                <input type="number" step="any" id="avg_glucose_level" name="avg_glucose_level" required>
+            </div>
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" step="any" id="bmi" name="bmi" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ever_married">Ever Married:</label>
+                <select id="ever_married" name="ever_married" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="residence_type">Residence Type:</label>
+                <select id="residence_type" name="residence_type" required>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="smoking_status">Smoking Status:</label>
+                <select id="smoking_status" name="smoking_status" required>
+                    <option value="never smoked">Never Smoked</option>
+                    <option value="smokes">Smokes</option>
+                    <option value="formerly smoked">Formerly Smoked</option>
+                </select>
+            </div>
+            <button type="submit">Predict Stroke</button>
+        </form>
+    </div>
+</body>
+</html>
